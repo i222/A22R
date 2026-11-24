@@ -1,0 +1,70 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+new file mode 100644
+--- /dev/null
++++ b/src/a22_inspector.rs
+@@ -0,0 +1,25 @@
++//! A22R policy for the GPUI base root plugin layer.
++//!
++//! The base `Root` mounts plugin views in a full-window wrapper above the
++//! application view. That wrapper is useful for ordinary overlays but becomes
++//! the top Inspector target while the target window is picking elements.
++
++use gpui::{App, Window};
++
++#[inline]
++pub(crate) fn should_render_plugin_layers(window: &Window, cx: &App) -> bool {
++    should_render_plugin_layers_for_picking(window.is_inspector_picking(cx))
++}
++
++#[inline]
++fn should_render_plugin_layers_for_picking(is_inspector_picking: bool) -> bool {
++    !is_inspector_picking
++}
++
++#[cfg(test)]
++mod tests {
++    #[test]
++    fn plugin_layers_are_hidden_during_inspector_picking() {
++        assert!(!super::should_render_plugin_layers_for_picking(true));
++        assert!(super::should_render_plugin_layers_for_picking(false));
++    }
++}
+diff --git a/src/lib.rs b/src/lib.rs
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -7,5 +7,6 @@
+ #[cfg(all(feature = "gpui-fast", test))]
+ extern crate gpui_fast_platform as gpui_platform;
+ 
+ mod a11y_disabled;
++mod a22_inspector;
+ mod accordion;
+diff --git a/src/root.rs b/src/root.rs
+--- a/src/root.rs
++++ b/src/root.rs
+@@ -1,3 +1,4 @@
+ //! Window roots and presentation-layer plugins.
++use crate::a22_inspector;
+ use crate::input::Copy;
+ use crate::{StyledExt, TextSelectionLayer};
+@@ -257,11 +257,13 @@ impl Render for Root {
+             .relative()
+             .size_full()
+             .child(TextSelectionLayer)
+-            .child(self.view.clone())
+-            .child(
+-                div()
+-                    .absolute()
+-                    .inset_0()
+-                    .children(self.plugins.iter().map(|plugin| plugin.view.clone())),
+-            );
++            .child(self.view.clone());
++        if a22_inspector::should_render_plugin_layers(window, cx) {
++            content = content.child(
++                div()
++                    .absolute()
++                    .inset_0()
++                    .children(self.plugins.iter().map(|plugin| plugin.view.clone())),
++            );
++        }
+         for plugin in &self.plugins {

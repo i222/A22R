@@ -1,0 +1,81 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+--- a/src/a22_inspector.rs
++++ b/src/a22_inspector.rs
+@@ -7,7 +7,7 @@
+ #![cfg(any(feature = "inspector", debug_assertions))]
+ 
+-use crate::{Bounds, Entity, Inspector, InspectorElementId, Pixels, SharedString};
++use crate::{Bounds, Entity, Inspector, InspectorElementId, Pixels, Point, SharedString};
+ 
+ /// A frame-local description of one inspectable element.
+@@ -34,6 +34,7 @@ pub(crate) struct InspectorHostState {
+     component_capture_active: bool,
+     component_stack: Vec<InspectorElementId>,
+     component_nodes: Vec<InspectorComponentNode>,
++    mouse_passthrough_regions: Vec<Bounds<Pixels>>,
+ }
+ 
+ impl InspectorHostState {
+@@ -45,6 +46,7 @@ impl InspectorHostState {
+             component_capture_active: false,
+             component_stack: Vec::new(),
+             component_nodes: Vec::new(),
++            mouse_passthrough_regions: Vec::new(),
+         }
+     }
+@@ -74,8 +76,20 @@ impl InspectorHostState {
+         self.component_capture_active = true;
+         self.component_stack.clear();
+         self.component_nodes.clear();
++        self.mouse_passthrough_regions.clear();
+     }
+ 
++    pub(crate) fn register_mouse_passthrough(&mut self, bounds: Bounds<Pixels>) {
++        self.mouse_passthrough_regions.push(bounds);
++    }
++
++    pub(crate) fn is_mouse_passthrough(&self, position: Point<Pixels>) -> bool {
++        self.mouse_passthrough_regions
++            .iter()
++            .any(|bounds| bounds.contains(&position))
++    }
++
+     pub(crate) fn begin_component(&mut self, id: InspectorElementId) {
+         if !self.component_capture_active {
+             return;
+diff --git a/src/window.rs b/src/window.rs
+--- a/src/window.rs
++++ b/src/window.rs
+@@ -5995,7 +5995,10 @@ impl Window {
+         }
+ 
+         #[cfg(any(feature = "inspector", debug_assertions))]
+-        if self.is_inspector_picking(cx) {
++        if self.is_inspector_picking(cx)
++            && !self
++                .a22_inspector
++                .is_mouse_passthrough(self.mouse_position())
++        {
+             self.handle_inspector_mouse_event(event, cx);
+             // When inspector is picking, all other mouse handling is skipped.
+@@ -7195,6 +7198,17 @@ impl Window {
+         self.refresh();
+     }
+ 
++    /// Registers a target-window region whose normal mouse handlers remain
++    /// available while Inspector picking is active.
++    ///
++    /// A22R uses this for product-level Inspector controls. The region is
++    /// refreshed with each frame and does not change element selection
++    /// behavior anywhere else in the target window.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn register_inspector_mouse_passthrough(&mut self, bounds: Bounds<Pixels>) {
++        if self.inspector.is_some() {
++            self.a22_inspector.register_mouse_passthrough(bounds);
++        }
++    }
++
+     /// Returns whether the built-in Inspector panel is rendered in this window.
+     #[cfg(any(feature = "inspector", debug_assertions))]
+     pub fn inspector_panel_visible(&self) -> bool {
+*** End Patch

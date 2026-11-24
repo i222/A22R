@@ -1,0 +1,13 @@
+[package]
+name = "a22-ui-kit-gpui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "A22 production UI backend adapter based on gpui-kit"
+
+[dependencies]
+chrono = { workspace = true }
+gpui-kit = { workspace = true }
+
+[dev-dependencies]
+gpui = { package = "gpui-pre", version = "=0.3.10", features = ["test-support"] }

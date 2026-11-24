@@ -1,0 +1,16 @@
+[package]
+name = "a22-platform"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Platform adapters for native A22R integrations"
+
+[dependencies]
+a22-core = { path = "../a22-core" }
+gpui-kit = { workspace = true }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "=0.10.0"
+core-graphics = "=0.24.0"
+core-text = "=21.0.0"
+foreign-types = { workspace = true }

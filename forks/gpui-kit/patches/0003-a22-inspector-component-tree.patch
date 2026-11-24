@@ -1,0 +1,307 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+--- a/src/a22_inspector.rs
++++ b/src/a22_inspector.rs
+@@ -4,7 +4,27 @@
+ //! the target window.
+ 
+ #![cfg(any(feature = "inspector", debug_assertions))]
+ 
+-use crate::{Entity, Inspector};
++use crate::{Bounds, Entity, Inspector, InspectorElementId, Pixels, SharedString};
++
++/// A frame-local description of one inspectable element.
++///
++/// The recorder intentionally stores only data available at the public
++/// element lifecycle boundary. It does not expose or retain GPUI's private
++/// hitbox or rendered-frame maps.
++#[derive(Clone, Debug, PartialEq)]
++pub struct InspectorComponentNode {
++    /// Inspector identity for the element.
++    pub id: InspectorElementId,
++    /// Nearest inspectable ancestor encountered during layout.
++    pub parent_id: Option<InspectorElementId>,
++    /// Source file and line where the element was constructed.
++    pub source_location: SharedString,
++    /// The current global element-id path, if one was assigned.
++    pub global_id: SharedString,
++    /// Bounds recorded during prepaint.
++    pub bounds: Option<Bounds<Pixels>>,
++}
+ 
+ /// State that separates the Inspector panel's presentation from its session.
+ pub(crate) struct InspectorHostState {
+     panel_visible: bool,
+     state_source: Option<Entity<Inspector>>,
++    component_capture_active: bool,
++    component_stack: Vec<InspectorElementId>,
++    component_nodes: Vec<InspectorComponentNode>,
+ }
+@@ -15,8 +35,12 @@ impl InspectorHostState {
+         Self {
+             panel_visible: true,
+             state_source: None,
++            component_capture_active: false,
++            component_stack: Vec::new(),
++            component_nodes: Vec::new(),
+         }
+     }
+@@ -38,6 +62,58 @@ impl InspectorHostState {
+     pub(crate) fn clear_state_source(&mut self) {
+         self.state_source = None;
+     }
++
++    pub(crate) fn begin_component_frame(&mut self) {
++        self.component_capture_active = true;
++        self.component_stack.clear();
++        self.component_nodes.clear();
++    }
++
++    pub(crate) fn begin_component(&mut self, id: InspectorElementId) {
++        if !self.component_capture_active {
++            return;
++        }
++
++        let parent_id = self.component_stack.last().cloned();
++        let node = InspectorComponentNode {
++            source_location: SharedString::from(format!(
++                "{}:{}:{}",
++                id.path.source_location.file(),
++                id.path.source_location.line(),
++                id.path.source_location.column()
++            )),
++            global_id: SharedString::from(id.path.global_id.to_string()),
++            id: id.clone(),
++            parent_id,
++            bounds: None,
++        };
++        self.component_nodes.push(node);
++        self.component_stack.push(id);
++    }
++
++    pub(crate) fn end_component(&mut self) {
++        if self.component_capture_active {
++            self.component_stack.pop();
++        }
++    }
++
++    pub(crate) fn record_component_bounds(
++        &mut self,
++        id: &InspectorElementId,
++        bounds: Bounds<Pixels>,
++    ) {
++        if !self.component_capture_active {
++            return;
++        }
++        if let Some(node) = self
++            .component_nodes
++            .iter_mut()
++            .rev()
++            .find(|node| node.id == *id)
++        {
++            node.bounds = Some(bounds);
++        }
++    }
++
++    pub(crate) fn finish_component_frame(&mut self) -> Vec<InspectorComponentNode> {
++        self.component_capture_active = false;
++        self.component_stack.clear();
++        std::mem::take(&mut self.component_nodes)
++    }
+ }
+@@ -64,4 +140,35 @@ mod tests {
+         assert!(!state.panel_visible());
+         assert!(state.state_source().is_none());
+     }
++
++    #[test]
++    fn component_capture_records_parent_and_bounds() {
++        let mut state = InspectorHostState::default();
++        state.begin_component_frame();
++        let parent = test_id(0);
++        let child = test_id(1);
++        state.begin_component(parent.clone());
++        state.begin_component(child.clone());
++        state.end_component();
++        state.record_component_bounds(&child, Bounds::default());
++        state.end_component();
++
++        let nodes = state.finish_component_frame();
++        assert_eq!(nodes.len(), 2);
++        assert_eq!(nodes[0].parent_id, None);
++        assert_eq!(nodes[1].parent_id, Some(parent));
++        assert_eq!(nodes[1].bounds, Some(Bounds::default()));
++    }
++
++    fn test_id(instance_id: usize) -> InspectorElementId {
++        InspectorElementId {
++            path: std::rc::Rc::new(crate::InspectorElementPath {
++                global_id: Default::default(),
++                source_location: std::panic::Location::caller(),
++            }),
++            instance_id,
++        }
++    }
+ }
+@@ -55,6 +55,7 @@ mod tests {
+     use super::InspectorHostState;
++    use crate::InspectorElementId;
+
+     #[test]
+diff --git a/src/element.rs b/src/element.rs
+--- a/src/element.rs
++++ b/src/element.rs
+@@ -380,12 +380,22 @@ impl<E: Element> Drawable<E> {
+                     inspector_id = None;
+                 }
+ 
++                #[cfg(any(feature = "inspector", debug_assertions))]
++                if let Some(inspector_id) = inspector_id.as_ref() {
++                    window.begin_inspector_component(inspector_id.clone());
++                }
++
+                 let (layout_id, request_layout) = self.element.request_layout(
+                     global_id.as_ref(),
+                     inspector_id.as_ref(),
+                     window,
+                     cx,
+                 );
+ 
++                #[cfg(any(feature = "inspector", debug_assertions))]
++                if inspector_id.is_some() {
++                    window.end_inspector_component();
++                }
++
+                 if global_id.is_some() {
+                     window.element_id_stack.pop();
+                 }
+@@ -424,6 +434,10 @@ impl<E: Element> Drawable<E> {
+                 }
+ 
+                 let bounds = window.layout_bounds(layout_id);
++                #[cfg(any(feature = "inspector", debug_assertions))]
++                if let Some(inspector_id) = inspector_id.as_ref() {
++                    window.record_inspector_component_bounds(inspector_id, bounds);
++                }
+                 let mut pushed_a11y_node = false;
+diff --git a/src/gpui.rs b/src/gpui.rs
+--- a/src/gpui.rs
++++ b/src/gpui.rs
+@@ -7,6 +7,8 @@
+ 
+ extern crate self as gpui;
+ #[cfg(any(feature = "inspector", debug_assertions))]
+ mod a22_inspector;
++#[cfg(any(feature = "inspector", debug_assertions))]
++pub use a22_inspector::InspectorComponentNode;
+ #[macro_use]
+ mod action;
+diff --git a/src/inspector.rs b/src/inspector.rs
+--- a/src/inspector.rs
++++ b/src/inspector.rs
+@@ -21,6 +21,7 @@ pub use conditional::*;
+ #[cfg(any(feature = "inspector", debug_assertions))]
+ mod conditional {
+     use super::*;
++    use crate::a22_inspector::InspectorComponentNode;
+     use crate::{AnyElement, App, Context, Empty, IntoElement, Render, Window};
+@@ -61,6 +62,7 @@ mod conditional {
+         active_element: Option<InspectedElement>,
+         pub(crate) pick_depth: Option<f32>,
+         renderers: TypeIdHashMap<InspectorElementRenderer>,
++        component_tree: Vec<InspectorComponentNode>,
+@@ -83,6 +85,7 @@ mod conditional {
+                 active_element: None,
+                 pick_depth: Some(0.0),
+                 renderers: TypeIdHashMap::default(),
++                component_tree: Vec::new(),
+             }
+@@ -116,8 +119,24 @@ mod conditional {
+         pub fn active_element_id(&self) -> Option<&InspectorElementId> {
+             self.active_element.as_ref().map(|e| &e.id)
++        }
++
++        /// Returns the most recent frame-local inspectable component snapshot.
++        pub fn component_tree(&self) -> &[InspectorComponentNode] {
++            &self.component_tree
+         }
+ 
++        pub(crate) fn set_component_tree(
++            &mut self,
++            component_tree: Vec<InspectorComponentNode>,
++        ) -> bool {
++            if self.component_tree == component_tree {
++                return false;
++            }
++            self.component_tree = component_tree;
++            true
++        }
++
+diff --git a/src/window.rs b/src/window.rs
+--- a/src/window.rs
++++ b/src/window.rs
+@@ -3692,6 +3692,11 @@ impl Window {
+             self.a11y.begin_frame();
+         }
+ 
++        #[cfg(any(feature = "inspector", debug_assertions))]
++        if self.inspector.is_some() {
++            self.begin_inspector_component_frame();
++        }
++
+         let _inspector_width: Pixels = rems(30.0).to_pixels(self.rem_size());
+@@ -3728,6 +3731,11 @@ impl Window {
+         root_element.prepaint_as_root(Point::default(), root_size.into(), self, cx);
+ 
++        #[cfg(any(feature = "inspector", debug_assertions))]
++        if self.inspector.is_some() {
++            self.publish_inspector_component_tree(cx);
++        }
++
+         #[cfg(any(feature = "inspector", debug_assertions))]
+-         let inspector_element = if self.a22_inspector.panel_visible() {
++         let inspector_element = if self.inspector.is_some() && self.a22_inspector.panel_visible() {
+             self.prepaint_inspector(_inspector_width, cx)
+         } else {
+             None
+         };
+@@ -7213,6 +7219,45 @@ impl Window {
+     pub fn clear_inspector_state_source(&mut self) {
+         self.a22_inspector.clear_state_source();
+     }
++
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub(crate) fn begin_inspector_component_frame(&mut self) {
++        self.a22_inspector.begin_component_frame();
++    }
++
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub(crate) fn begin_inspector_component(&mut self, id: crate::InspectorElementId) {
++        self.a22_inspector.begin_component(id);
++    }
++
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub(crate) fn end_inspector_component(&mut self) {
++        self.a22_inspector.end_component();
++    }
++
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub(crate) fn record_inspector_component_bounds(
++        &mut self,
++        id: &crate::InspectorElementId,
++        bounds: Bounds<Pixels>,
++    ) {
++        self.a22_inspector.record_component_bounds(id, bounds);
++    }
++
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    fn publish_inspector_component_tree(&mut self, cx: &mut App) {
++        let Some(inspector) = self.inspector.clone() else {
++            return;
++        };
++        let component_tree = self.a22_inspector.finish_component_frame();
++        inspector.update(cx, |inspector, inspector_cx| {
++            if inspector.set_component_tree(component_tree) {
++                inspector_cx.notify();
++            }
++        });
++    }

@@ -1,0 +1,242 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+new file mode 100644
+--- /dev/null
++++ b/src/a22_inspector.rs
+@@ -0,0 +1,51 @@
++//! A22R-specific Inspector host state.
++//!
++//! This module contains only the state needed to render the built-in Inspector
++//! entity outside the target window. Hit testing and selection remain owned by
++//! the target window.
++
++#![cfg(any(feature = "inspector", debug_assertions))]
++
++use crate::{Entity, Inspector};
++
++/// State that separates the Inspector panel's presentation from its session.
++pub(crate) struct InspectorHostState {
++    panel_visible: bool,
++    state_source: Option<Entity<Inspector>>,
++}
++
++impl InspectorHostState {
++    pub(crate) fn new() -> Self {
++        Self {
++            panel_visible: true,
++            state_source: None,
++        }
++    }
++
++    pub(crate) fn panel_visible(&self) -> bool {
++        self.panel_visible
++    }
++
++    pub(crate) fn set_panel_visible(&mut self, visible: bool) {
++        self.panel_visible = visible;
++    }
++
++    pub(crate) fn state_source(&self) -> Option<Entity<Inspector>> {
++        self.state_source.clone()
++    }
++
++    pub(crate) fn set_state_source(&mut self, source: Entity<Inspector>) {
++        self.state_source = Some(source);
++    }
++
++    pub(crate) fn clear_state_source(&mut self) {
++        self.state_source = None;
++    }
++}
++
++impl Default for InspectorHostState {
++    fn default() -> Self {
++        Self::new()
++    }
++}
+diff --git a/src/gpui.rs b/src/gpui.rs
+--- a/src/gpui.rs
++++ b/src/gpui.rs
+@@ -5,6 +5,8 @@
+ #![allow(unused_mut)] // False positives in platform specific code
+ 
+ extern crate self as gpui;
++#[cfg(any(feature = "inspector", debug_assertions))]
++mod a22_inspector;
+ #[macro_use]
+ mod action;
+ mod app;
+diff --git a/src/inspector.rs b/src/inspector.rs
+--- a/src/inspector.rs
++++ b/src/inspector.rs
+@@ -91,12 +91,15 @@ impl Inspector {
+             self.pick_depth = None;
+         }
+ 
+-        pub(crate) fn hover(&mut self, id: InspectorElementId, window: &mut Window) {
++        pub(crate) fn hover(&mut self, id: InspectorElementId, window: &mut Window) -> bool {
+             if self.is_picking() {
+                 let changed = self.set_active_element_id(id, window);
+                 if changed {
+                     self.pick_depth = Some(0.0);
+                 }
++                changed
++            } else {
++                false
+             }
+         }
+ 
+diff --git a/src/window.rs b/src/window.rs
+--- a/src/window.rs
++++ b/src/window.rs
+@@ -2,6 +2,8 @@
+ use crate::DebugFrameOverlayMode;
+ #[cfg(any(feature = "inspector", debug_assertions))]
+ use crate::Inspector;
++#[cfg(any(feature = "inspector", debug_assertions))]
++use crate::a22_inspector::InspectorHostState;
+ #[cfg(feature = "profiler")]
+ use crate::profiler;
+ use crate::{
+@@ -1308,6 +1310,8 @@ pub struct Window {
+     captured_hitbox: Option<HitboxId>,
+     #[cfg(any(feature = "inspector", debug_assertions))]
+     inspector: Option<Entity<Inspector>>,
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    a22_inspector: InspectorHostState,
+     #[cfg(feature = "profiler")]
+     debug_frame_overlay: crate::debug_overlay::DebugFrameOverlay,
+     pub(crate) a11y: A11y,
+@@ -2210,6 +2214,8 @@ impl Window {
+             captured_hitbox: None,
+             #[cfg(any(feature = "inspector", debug_assertions))]
+             inspector: None,
++            #[cfg(any(feature = "inspector", debug_assertions))]
++            a22_inspector: InspectorHostState::new(),
+             #[cfg(feature = "profiler")]
+             debug_frame_overlay: crate::debug_overlay::DebugFrameOverlay::new(),
+             a11y: A11y::new(
+@@ -3697,7 +3703,7 @@ impl Window {
+         let root_size = {
+             #[cfg(any(feature = "inspector", debug_assertions))]
+             {
+-                if self.inspector.is_some() {
++                if self.inspector.is_some() && self.a22_inspector.panel_visible() {
+                     let mut size = self.viewport_size;
+                     size.width = (size.width - _inspector_width).max(px(0.0));
+                     size
+@@ -3728,7 +3734,11 @@ impl Window {
+         root_element.prepaint_as_root(Point::default(), root_size.into(), self, cx);
+ 
+         #[cfg(any(feature = "inspector", debug_assertions))]
+-        let inspector_element = self.prepaint_inspector(_inspector_width, cx);
++        let inspector_element = if self.a22_inspector.panel_visible() {
++            self.prepaint_inspector(_inspector_width, cx)
++        } else {
++            None
++        };
+ 
+         self.prepaint_deferred_draws(cx);
+ 
+@@ -7162,8 +7172,46 @@ impl Window {
+             }
+         }
+         false
++    }
++
++    /// Returns the Inspector session owned by this window, if one is active.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn inspector_entity(&self) -> Option<Entity<Inspector>> {
++        self.inspector.clone()
++    }
++
++    /// Shows or hides the built-in Inspector panel without changing its session.
++    ///
++    /// Hiding the panel keeps hit testing and selection in this window active,
++    /// which allows another window to render the same Inspector entity.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn set_inspector_panel_visible(&mut self, visible: bool) {
++        self.a22_inspector.set_panel_visible(visible);
++        self.refresh();
++    }
++
++    /// Returns whether the built-in Inspector panel is rendered in this window.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn inspector_panel_visible(&self) -> bool {
++        self.a22_inspector.panel_visible()
++    }
++
++    /// Uses an Inspector session owned by another window for state edits.
++    ///
++    /// The target window still owns hit testing. This hook is for a detached
++    /// Inspector renderer that needs to edit the selected element's state.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn set_inspector_state_source(&mut self, inspector: Entity<Inspector>) {
++        self.a22_inspector.set_state_source(inspector);
++        self.refresh();
++    }
++
++    /// Clears the Inspector state source used by a detached renderer.
++    #[cfg(any(feature = "inspector", debug_assertions))]
++    pub fn clear_inspector_state_source(&mut self) {
++        self.a22_inspector.clear_state_source();
+     }
+ 
+     /// Executes the provided function with mutable access to an inspector state.
+@@ -7173,7 +7221,10 @@ impl Window {
+         f: impl FnOnce(&mut Option<T>, &mut Self) -> R,
+     ) -> Option<R> {
+         let inspector_id = inspector_id?;
+-        let inspector = self.inspector.as_ref()?;
++        let inspector = self
++            .inspector
++            .clone()
++            .or_else(|| self.a22_inspector.state_source())?;
+         if inspector.read(cx).active_element_id() != Some(inspector_id) {
+             return None;
+         }
+@@ -7271,19 +7322,22 @@ impl Window {
+             return;
+         };
+         if event.downcast_ref::<MouseMoveEvent>().is_some() {
+-            inspector.update(cx, |inspector, _cx| {
++            inspector.update(cx, |inspector, inspector_cx| {
+                 if let Some((_, inspector_id)) =
+                     self.hovered_inspector_hitbox(inspector, &self.rendered_frame)
+                 {
+-                    inspector.hover(inspector_id, self);
++                    if inspector.hover(inspector_id, self) {
++                        inspector_cx.notify();
++                    }
+                 }
+             });
+         } else if event.downcast_ref::<crate::MouseDownEvent>().is_some() {
+-            inspector.update(cx, |inspector, _cx| {
++            inspector.update(cx, |inspector, inspector_cx| {
+                 if let Some((_, inspector_id)) =
+                     self.hovered_inspector_hitbox(inspector, &self.rendered_frame)
+                 {
+                     inspector.select(inspector_id, self);
++                    inspector_cx.notify();
+                 }
+             });
+         } else if let Some(event) = event.downcast_ref::<crate::ScrollEvent>() {
+@@ -7295,7 +7349,7 @@ impl Window {
+                 .pixel_delta(px(SCROLL_PIXELS_PER_LAYER / SCROLL_LINES))
+                 .y;
+             if let Some(inspector) = self.inspector.clone() {
+-                inspector.update(cx, |inspector, _cx| {
++                inspector.update(cx, |inspector, inspector_cx| {
+                     if let Some(depth) = inspector.pick_depth.as_mut() {
+                         *depth += f32::from(delta_y) / SCROLL_PIXELS_PER_LAYER;
+                         let max_depth = self.mouse_hit_test.ids.len() as f32 - 0.5;
+@@ -7307,7 +7361,9 @@ impl Window {
+                         if let Some((_, inspector_id)) =
+                             self.hovered_inspector_hitbox(inspector, &self.rendered_frame)
+                         {
+-                            inspector.set_active_element_id(inspector_id, self);
++                            if inspector.set_active_element_id(inspector_id, self) {
++                                inspector_cx.notify();
++                            }
+                         }
+                     }
+                 });

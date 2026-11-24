@@ -1,0 +1,45 @@
+[workspace]
+resolver = "2"
+members = [
+    "a22-app",
+    "a22-application",
+    "a22-core",
+    "a22-db",
+    "a22-platform",
+    "a22-ui",
+    "a22-ui-kit-gpui",
+]
+exclude = [
+    "forks/gpui-kit/gpui-base",
+    "forks/gpui-kit/gpui-component",
+    "forks/gpui-kit/gpui-pre",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+base64 = "0.22"
+blake3 = "1"
+chrono = "0.4"
+flate2 = "1"
+fs4 = "0.13"
+foreign-types = "0.5"
+gpui-kit = { version = "=0.8.1", default-features = true }
+rusqlite = { version = "0.32", features = ["bundled", "functions"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[patch.crates-io]
+# A22R's Inspector overlay workaround; see forks/gpui-kit/README.md.
+gpui-component = { path = "forks/gpui-kit/gpui-component" }
+# Base root-layer guard; see forks/gpui-kit/gpui-base/README.md.
+gpui-base = { path = "forks/gpui-kit/gpui-base" }
+# Detached Inspector host hooks; see forks/gpui-kit/gpui-pre/README.md.
+gpui-pre = { path = "forks/gpui-kit/gpui-pre" }

@@ -1,0 +1,10 @@
+[package]
+name = "a22-ui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "A22-owned product UI components and transient UI state"
+
+[dependencies]
+a22-ui-kit-gpui = { path = "../a22-ui-kit-gpui" }
+gpui-kit = { workspace = true }

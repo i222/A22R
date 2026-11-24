@@ -1,0 +1,77 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+new file mode 100644
+--- /dev/null
++++ b/src/a22_inspector.rs
+@@ -0,0 +1,38 @@
++//! A22R-specific policy for overlays that participate in Inspector picking.
++//!
++//! Keep this module small and independent from the built-in Inspector UI. It
++//! is the update boundary for the notification-overlay workaround and should
++//! be reapplied after refreshing the upstream `gpui-component` source.
++
++use gpui::{App, Window};
++
++/// Whether a window-level notification host should be rendered.
++///
++/// GPUI's Inspector deliberately adds hitboxes to otherwise non-interactive
++/// elements while it is picking. The notification layer contains a
++/// full-window host, so rendering it in that mode makes the host the top
++/// selectable element even when there is no visible notification.
++#[inline]
++pub(crate) fn should_render_notification_layer(is_inspector_picking: bool) -> bool {
++    !is_inspector_picking
++}
++
++/// Apply the A22R notification-layer policy to a GPUI window.
++#[inline]
++pub(crate) fn should_render_notification_layer_for_window(window: &Window, cx: &App) -> bool {
++    should_render_notification_layer(window.is_inspector_picking(cx))
++}
++
++#[cfg(test)]
++mod tests {
++    use super::should_render_notification_layer;
++
++    #[test]
++    fn notification_layer_is_rendered_outside_inspector_picking() {
++        assert!(should_render_notification_layer(false));
++    }
++
++    #[test]
++    fn notification_layer_is_hidden_during_inspector_picking() {
++        assert!(!should_render_notification_layer(true));
++    }
++}
+diff --git a/src/lib.rs b/src/lib.rs
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -3,9 +3,9 @@ use gpui::App;
+ use std::ops::Deref;
+ use std::sync::LazyLock;
+ 
++mod a22_inspector;
+ mod component_traits;
+ mod element_ext;
+-mod a22_inspector;
+ pub mod global_state;
+ mod icon;
+diff --git a/src/root.rs b/src/root.rs
+--- a/src/root.rs
++++ b/src/root.rs
+@@ -1,6 +1,5 @@
+ use crate::{
+-    ActiveTheme, ElementExt, Placement,
+-    a22_inspector,
++    ActiveTheme, ElementExt, Placement, a22_inspector,
+     dialog::{ANIMATION_DURATION, Dialog, DialogMotion},
+     input::AnyInputState,
+     native_menu::FallbackMenuOverlay,
+@@ -171,6 +170,10 @@ impl WindowState {
+         window: &Window,
+         cx: &App,
+     ) -> Option<impl IntoElement + use<>> {
++        if !a22_inspector::should_render_notification_layer_for_window(window, cx) {
++            return None;
++        }
++
+         let active_sheet_placement = root.read(cx).active_sheet.clone().map(|d| d.placement);

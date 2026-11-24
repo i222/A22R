@@ -1,0 +1,60 @@
+/target/
+/native-e2e-artifacts/
+/tmp/
+/.history/
+
+# Rust and local build output
+**/*.rs.bk
+
+# Native application and test logs
+*.log
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd
+.TemporaryItems/
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE metadata
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.vscode/
+
+# Local SQLite profiles and sidecars
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite-wal
+*.sqlite-shm
+a22r.sqlite3
+native-e2e-*.sqlite3
+native-e2e-*.sqlite3-*
+
+# Fork-generated metadata; the root Cargo.lock remains committed
+forks/gpui-kit/**/.cargo-ok
+forks/gpui-kit/**/.cargo_vcs_info.json
+forks/gpui-kit/**/Cargo.lock
+forks/gpui-kit/**/Cargo.toml.orig
+
+# Accidental editor diagnostic names and local packaging output
+**/*:*
+/dist/
+*.dmg
+*.zip

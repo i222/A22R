@@ -1,0 +1,18 @@
+[package]
+name = "a22-app"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Native GPUI application shell"
+
+[dependencies]
+a22-application = { path = "../a22-application" }
+a22-core = { path = "../a22-core" }
+a22-platform = { path = "../a22-platform" }
+a22-ui = { path = "../a22-ui" }
+gpui-kit = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+[target.'cfg(any(target_os = "macos", target_os = "windows"))'.dev-dependencies]
+xa11y = "=0.15.4"

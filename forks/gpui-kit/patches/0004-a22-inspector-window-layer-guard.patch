@@ -1,0 +1,72 @@
+diff --git a/src/a22_inspector.rs b/src/a22_inspector.rs
+--- a/src/a22_inspector.rs
++++ b/src/a22_inspector.rs
+@@ -20,6 +20,26 @@ pub(crate) fn should_render_notification_layer_for_window(window: &Window, cx:
+     should_render_notification_layer(window.is_inspector_picking(cx))
+ }
+ 
++/// Window-level overlays must not participate in Inspector picking.
++///
++/// The built-in Inspector records source locations for regular elements,
++/// including transparent full-window overlay hosts. While a target window is
++/// in picking mode those hosts are not useful targets and can hide the actual
++/// application subtree from hit testing.
++#[inline]
++pub(crate) fn should_render_window_layers_for_window(window: &Window, cx: &App) -> bool {
++    should_render_window_layers(window.is_inspector_picking(cx))
++}
++
++#[inline]
++fn should_render_window_layers(is_inspector_picking: bool) -> bool {
++    !is_inspector_picking
++}
++
+ #[cfg(test)]
+ mod tests {
+-    use super::should_render_notification_layer;
++    use super::{should_render_notification_layer, should_render_window_layers};
+ 
+     #[test]
+     fn notification_layer_is_rendered_outside_inspector_picking() {
+@@ -33,4 +53,10 @@ mod tests {
+     fn notification_layer_is_hidden_during_inspector_picking() {
+         assert!(!should_render_notification_layer(true));
+     }
++
++    #[test]
++    fn window_layers_are_hidden_during_inspector_picking() {
++        assert!(!should_render_window_layers(true));
++        assert!(should_render_window_layers(false));
++    }
+ }
+diff --git a/src/root.rs b/src/root.rs
+--- a/src/root.rs
++++ b/src/root.rs
+@@ -741,13 +741,19 @@ impl RootPlugin for WindowState {
+ }
+ 
+ impl Render for WindowState {
+-    fn render(&mut self, _window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
+-        div()
+-            .absolute()
+-            .inset_0()
+-            .child(WindowStateLayers { root: cx.entity() })
+-            .child(self.touch_selection_overlay.clone())
+-            .child(self.tooltip_overlay.clone())
+-            .children(self.tooltip_press_listener(cx))
+-            .child(self.native_menu_overlay.clone())
++    fn render(&mut self, window: &mut Window, cx: &mut Context<Self>) -> impl IntoElement {
++        let mut layers = div();
++        if a22_inspector::should_render_window_layers_for_window(window, cx) {
++            layers = layers
++                .absolute()
++                .inset_0()
++                .child(WindowStateLayers { root: cx.entity() })
++                .child(self.touch_selection_overlay.clone())
++                .child(self.tooltip_overlay.clone())
++                .children(self.tooltip_press_listener(cx))
++                .child(self.native_menu_overlay.clone());
++        }
++        layers
+     }
+ }
