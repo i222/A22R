@@ -5,8 +5,57 @@ relationships. It is implemented entirely in Rust with GPUI: application
 services, domain logic, SQLite persistence, native platform adapters, and
 presentation are separate crates.
 
-The project starts with a new A22R data profile. It does not open or migrate
-the old application's live database.
+For now, A22R is more of a technical exploration of native Rust desktop applications and native GUI development as an alternative to HTML/CSS-based desktop stacks and
+React-style interfaces. The working hypothesis is that this approach can be a
+more predictable and potentially faster solution for this class of software;
+the project is intended to test that hypothesis in a real application rather
+than present it as a universal benchmark conclusion.
+
+## Overview
+
+The native workspace combines item browsing, tag filtering, item details, and
+relationship exploration in one GPUI window.
+
+This is not a finished visual design yet. There is little deliberate design
+work in the current build, and the layout still needs substantial polishing.
+Even at this stage, the native structure and interaction model show promising
+potential.
+
+![A22R item workspace showing the selected Phone Work item and a phone tag filter](docs/screenshots/Screenshot%202026-11-24%20at%2021.58.10.png)
+
+*Figure 1. Item workspace with a tag filter, ordered item list, and selected
+item details.*
+
+![A22R relationship graph for the Phone Work item](docs/screenshots/Screenshot%202026-11-24%20at%2021.58.41.png)
+
+*Figure 2. The selected item's direct neighbors with typed relationship edges.*
+
+The debug-only Inspector exposes native element properties and the component
+tree without changing the production UI. It has also been substantially
+reworked for practical use: before that work, the Inspector was nearly
+unusable, while the current version makes the native UI structure much easier
+to inspect and navigate.
+
+![A22R Inspector property panel beside the native workspace](docs/screenshots/Screenshot%202026-11-24%20at%2022.00.14.png)
+
+*Figure 3. Inspector property details for an element in the native workspace.*
+
+![A22R Inspector component tree beside the native workspace](docs/screenshots/Screenshot%202026-11-24%20at%2022.01.45.png)
+
+*Figure 4. The frame-local component tree with source, hierarchy, and bounds.*
+
+The reusable A22R UI Kit showcase covers the shared visual tokens and controls
+in both supported color modes.
+
+![A22R UI Kit showcase in dark mode](docs/screenshots/Screenshot%202026-11-24%20at%2022.03.44.png)
+
+*Figure 5. Dark UI Kit tokens, buttons, selection controls, and feedback
+states.*
+
+![A22R UI Kit showcase in light mode](docs/screenshots/Screenshot%202026-11-24%20at%2022.04.34.png)
+
+*Figure 6. Light UI Kit autocomplete, multi-select tags, selects, and list
+rows.*
 
 ## What is included
 
@@ -210,6 +259,7 @@ the risk and follow-up are recorded in [technical debt](docs/tech-debt.md).
 - [Database and file contract](docs/db-design.md)
 - [Testing and verification](docs/06-testing-tools.md)
 - [Version and platform baseline](docs/07-version-baseline.md)
+- [UI Kit showcase](docs/ui-kit-showcase.md)
 - [GPUI fork maintenance](forks/gpui-kit/README.md)
 - [Inspector implementation](docs/inspector/README.md)
 - [Initial release follow-up](docs/plans/00-initial-release_plan.md)

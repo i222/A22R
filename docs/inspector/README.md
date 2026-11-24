@@ -4,6 +4,11 @@ A22R Inspector is debug-only development tooling for inspecting the native
 GPUI interface. It is not part of the production UI and is not compiled into
 release builds.
 
+The current Inspector is a usability-focused rework of the earlier tooling.
+The previous version was close to unusable for day-to-day inspection; the
+current detached property view, component tree, picking policy, and toolbar
+controls make the native UI substantially easier to explore.
+
 ## Launch
 
 Start the debug application from the workspace root:
@@ -54,6 +59,16 @@ highlighting, expand/collapse controls, and revealing the currently selected
 Inspector node. It does not read private rendered-frame or hitbox maps.
 Snapshots are frame-local and can be empty when no inspectable elements reached
 the normal lifecycle.
+
+![A22R Inspector property panel beside the native workspace](../screenshots/Screenshot%202026-11-24%20at%2022.00.14.png)
+
+*Figure 1. The detached Inspector property panel showing the selected
+element's source, bounds, and styles.*
+
+![A22R Inspector component tree beside the native workspace](../screenshots/Screenshot%202026-11-24%20at%2022.01.45.png)
+
+*Figure 2. The detached component-tree window showing the selected node,
+hierarchy, source location, and bounds.*
 
 ## Fork layer
 

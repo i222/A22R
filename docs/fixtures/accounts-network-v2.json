@@ -1,0 +1,3730 @@
+{
+  "metadata": {
+    "version": "2",
+    "date": "2026-11-24T20:00:00.000Z",
+    "checksum": "ac26c2c4f9e0b6fb32a22a03ffb43211d4d3d89f0b65c46a5f9d003588c925e9"
+  },
+  "items": [
+    {
+      "id": "phone-primary",
+      "mainInfoEntryId": "phone-primary.title",
+      "tags": [
+        "identity",
+        "phone",
+        "2fa"
+      ],
+      "infoEntries": [
+        {
+          "id": "phone-primary.title",
+          "label": "title",
+          "value": "Phone · Primary"
+        },
+        {
+          "id": "phone-primary.description",
+          "label": "description",
+          "value": "Reserved 555 number for primary sign-ins."
+        },
+        {
+          "id": "phone-primary.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "phone-primary.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-01T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "phone-work",
+      "mainInfoEntryId": "phone-work.title",
+      "tags": [
+        "identity",
+        "phone",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "phone-work.title",
+          "label": "title",
+          "value": "Phone · Work"
+        },
+        {
+          "id": "phone-work.description",
+          "label": "description",
+          "value": "Reserved 555 number for work services."
+        },
+        {
+          "id": "phone-work.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "phone-work.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-02T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "phone-backup",
+      "mainInfoEntryId": "phone-backup.title",
+      "tags": [
+        "identity",
+        "phone",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "phone-backup.title",
+          "label": "title",
+          "value": "Phone · Backup"
+        },
+        {
+          "id": "phone-backup.description",
+          "label": "description",
+          "value": "Reserved 555 number for recovery only."
+        },
+        {
+          "id": "phone-backup.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "phone-backup.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-03T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "phone-retired",
+      "mainInfoEntryId": "phone-retired.title",
+      "tags": [
+        "identity",
+        "phone",
+        "archive"
+      ],
+      "infoEntries": [
+        {
+          "id": "phone-retired.title",
+          "label": "title",
+          "value": "Phone · Retired"
+        },
+        {
+          "id": "phone-retired.description",
+          "label": "description",
+          "value": "Retired reserved 555 number kept for old logins."
+        },
+        {
+          "id": "phone-retired.phone",
+          "label": "phone",
+          "value": "+1 202-555-0104"
+        },
+        {
+          "id": "phone-retired.status",
+          "label": "status",
+          "value": "retired"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-04T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "email-main",
+      "mainInfoEntryId": "email-main.title",
+      "tags": [
+        "identity",
+        "email",
+        "primary"
+      ],
+      "infoEntries": [
+        {
+          "id": "email-main.title",
+          "label": "title",
+          "value": "Email · Main"
+        },
+        {
+          "id": "email-main.description",
+          "label": "description",
+          "value": "Synthetic main mailbox for personal services."
+        },
+        {
+          "id": "email-main.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "email-main.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-05T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "email-work",
+      "mainInfoEntryId": "email-work.title",
+      "tags": [
+        "identity",
+        "email",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "email-work.title",
+          "label": "title",
+          "value": "Email · Work"
+        },
+        {
+          "id": "email-work.description",
+          "label": "description",
+          "value": "Synthetic mailbox for work and cloud tools."
+        },
+        {
+          "id": "email-work.email",
+          "label": "email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "email-work.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-06T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "email-recovery",
+      "mainInfoEntryId": "email-recovery.title",
+      "tags": [
+        "identity",
+        "email",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "email-recovery.title",
+          "label": "title",
+          "value": "Email · Recovery"
+        },
+        {
+          "id": "email-recovery.description",
+          "label": "description",
+          "value": "Synthetic mailbox used only for account recovery."
+        },
+        {
+          "id": "email-recovery.email",
+          "label": "email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "email-recovery.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-07T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "email-alias",
+      "mainInfoEntryId": "email-alias.title",
+      "tags": [
+        "identity",
+        "email",
+        "shopping"
+      ],
+      "infoEntries": [
+        {
+          "id": "email-alias.title",
+          "label": "title",
+          "value": "Email · Shopping"
+        },
+        {
+          "id": "email-alias.description",
+          "label": "description",
+          "value": "Synthetic alias for shops and newsletters."
+        },
+        {
+          "id": "email-alias.email",
+          "label": "email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "email-alias.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-08T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "identity-profile",
+      "mainInfoEntryId": "identity-profile.title",
+      "tags": [
+        "identity",
+        "profile"
+      ],
+      "infoEntries": [
+        {
+          "id": "identity-profile.title",
+          "label": "title",
+          "value": "Identity · Mila"
+        },
+        {
+          "id": "identity-profile.description",
+          "label": "description",
+          "value": "Synthetic owner profile for this account map."
+        },
+        {
+          "id": "identity-profile.name",
+          "label": "name",
+          "value": "Mila Ivanova (demo)"
+        },
+        {
+          "id": "identity-profile.locale",
+          "label": "locale",
+          "value": "en-US"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-09T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "bank-northstar",
+      "mainInfoEntryId": "bank-northstar.title",
+      "tags": [
+        "finance",
+        "bank",
+        "primary"
+      ],
+      "infoEntries": [
+        {
+          "id": "bank-northstar.title",
+          "label": "title",
+          "value": "Bank · Northstar"
+        },
+        {
+          "id": "bank-northstar.description",
+          "label": "description",
+          "value": "Fictional checking account; no real funds."
+        },
+        {
+          "id": "bank-northstar.email",
+          "label": "email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "bank-northstar.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "bank-northstar.account",
+          "label": "account",
+          "value": "NSB-DEMO-000401"
+        },
+        {
+          "id": "bank-northstar.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "opened",
+          "value": 1739836800000
+        },
+        {
+          "label": "review",
+          "value": 1797292800000
+        }
+      ],
+      "createdAt": "2026-10-10T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "bank-lumen",
+      "mainInfoEntryId": "bank-lumen.title",
+      "tags": [
+        "finance",
+        "bank",
+        "utilities"
+      ],
+      "infoEntries": [
+        {
+          "id": "bank-lumen.title",
+          "label": "title",
+          "value": "Bank · Lumen Credit"
+        },
+        {
+          "id": "bank-lumen.description",
+          "label": "description",
+          "value": "Fictional credit union account for bills."
+        },
+        {
+          "id": "bank-lumen.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "bank-lumen.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "bank-lumen.account",
+          "label": "account",
+          "value": "LCU-DEMO-000402"
+        },
+        {
+          "id": "bank-lumen.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "opened",
+          "value": 1719964800000
+        }
+      ],
+      "createdAt": "2026-10-11T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "bank-cedar",
+      "mainInfoEntryId": "bank-cedar.title",
+      "tags": [
+        "finance",
+        "bank",
+        "archive"
+      ],
+      "infoEntries": [
+        {
+          "id": "bank-cedar.title",
+          "label": "title",
+          "value": "Bank · Cedarline"
+        },
+        {
+          "id": "bank-cedar.description",
+          "label": "description",
+          "value": "Fictional dormant account retained for history."
+        },
+        {
+          "id": "bank-cedar.email",
+          "label": "email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "bank-cedar.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "bank-cedar.account",
+          "label": "account",
+          "value": "CDB-DEMO-000403"
+        },
+        {
+          "id": "bank-cedar.status",
+          "label": "status",
+          "value": "dormant"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "opened",
+          "value": 1699660800000
+        }
+      ],
+      "createdAt": "2026-10-12T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "card-northstar",
+      "mainInfoEntryId": "card-northstar.title",
+      "tags": [
+        "finance",
+        "card",
+        "primary"
+      ],
+      "infoEntries": [
+        {
+          "id": "card-northstar.title",
+          "label": "title",
+          "value": "Card · Northstar Black"
+        },
+        {
+          "id": "card-northstar.description",
+          "label": "description",
+          "value": "Synthetic card token issued by Northstar."
+        },
+        {
+          "id": "card-northstar.masked",
+          "label": "masked",
+          "value": "DEMO-0401"
+        },
+        {
+          "id": "card-northstar.issuer",
+          "label": "issuer",
+          "value": "Bank · Northstar"
+        },
+        {
+          "id": "card-northstar.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "expires",
+          "value": 1890777600000
+        }
+      ],
+      "createdAt": "2026-10-13T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "card-lumen",
+      "mainInfoEntryId": "card-lumen.title",
+      "tags": [
+        "finance",
+        "card",
+        "utilities"
+      ],
+      "infoEntries": [
+        {
+          "id": "card-lumen.title",
+          "label": "title",
+          "value": "Card · Lumen Everyday"
+        },
+        {
+          "id": "card-lumen.description",
+          "label": "description",
+          "value": "Synthetic everyday card token for recurring bills."
+        },
+        {
+          "id": "card-lumen.masked",
+          "label": "masked",
+          "value": "DEMO-0402"
+        },
+        {
+          "id": "card-lumen.issuer",
+          "label": "issuer",
+          "value": "Bank · Lumen Credit"
+        },
+        {
+          "id": "card-lumen.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "expires",
+          "value": 1848700800000
+        }
+      ],
+      "createdAt": "2026-10-14T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "card-cedar",
+      "mainInfoEntryId": "card-cedar.title",
+      "tags": [
+        "finance",
+        "card",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "card-cedar.title",
+          "label": "title",
+          "value": "Card · Cedarline Virtual"
+        },
+        {
+          "id": "card-cedar.description",
+          "label": "description",
+          "value": "Synthetic virtual card token for one-off payments."
+        },
+        {
+          "id": "card-cedar.masked",
+          "label": "masked",
+          "value": "DEMO-0403"
+        },
+        {
+          "id": "card-cedar.issuer",
+          "label": "issuer",
+          "value": "Bank · Cedarline"
+        },
+        {
+          "id": "card-cedar.status",
+          "label": "status",
+          "value": "paused"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "expires",
+          "value": 1803859200000
+        }
+      ],
+      "createdAt": "2026-10-15T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "wallet-aurora",
+      "mainInfoEntryId": "wallet-aurora.title",
+      "tags": [
+        "finance",
+        "payment",
+        "primary"
+      ],
+      "infoEntries": [
+        {
+          "id": "wallet-aurora.title",
+          "label": "title",
+          "value": "Wallet · Aurora Pay"
+        },
+        {
+          "id": "wallet-aurora.description",
+          "label": "description",
+          "value": "Fictional mobile wallet for daily purchases."
+        },
+        {
+          "id": "wallet-aurora.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "wallet-aurora.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "wallet-aurora.handle",
+          "label": "handle",
+          "value": "aurora-demo-0401"
+        },
+        {
+          "id": "wallet-aurora.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-16T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "wallet-orbit",
+      "mainInfoEntryId": "wallet-orbit.title",
+      "tags": [
+        "finance",
+        "payment",
+        "shopping"
+      ],
+      "infoEntries": [
+        {
+          "id": "wallet-orbit.title",
+          "label": "title",
+          "value": "Wallet · Orbit Wallet"
+        },
+        {
+          "id": "wallet-orbit.description",
+          "label": "description",
+          "value": "Fictional wallet for travel and donations."
+        },
+        {
+          "id": "wallet-orbit.email",
+          "label": "email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "wallet-orbit.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "wallet-orbit.handle",
+          "label": "handle",
+          "value": "orbit-demo-0402"
+        },
+        {
+          "id": "wallet-orbit.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-17T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "payment-quick",
+      "mainInfoEntryId": "payment-quick.title",
+      "tags": [
+        "finance",
+        "payment",
+        "bank"
+      ],
+      "infoEntries": [
+        {
+          "id": "payment-quick.title",
+          "label": "title",
+          "value": "Payment · QuickTransfer"
+        },
+        {
+          "id": "payment-quick.description",
+          "label": "description",
+          "value": "Fictional bank-transfer service for invoices."
+        },
+        {
+          "id": "payment-quick.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "payment-quick.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "payment-quick.account",
+          "label": "account",
+          "value": "QT-DEMO-0403"
+        },
+        {
+          "id": "payment-quick.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-18T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "cloud-nimbus",
+      "mainInfoEntryId": "cloud-nimbus.title",
+      "tags": [
+        "service",
+        "cloud",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "cloud-nimbus.title",
+          "label": "title",
+          "value": "Cloud · Nimbus Drive"
+        },
+        {
+          "id": "cloud-nimbus.description",
+          "label": "description",
+          "value": "Fictional cloud storage for work files."
+        },
+        {
+          "id": "cloud-nimbus.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "cloud-nimbus.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "cloud-nimbus.plan",
+          "label": "plan",
+          "value": "pro"
+        },
+        {
+          "id": "cloud-nimbus.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1799712000000
+        }
+      ],
+      "createdAt": "2026-10-19T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "password-keyforge",
+      "mainInfoEntryId": "password-keyforge.title",
+      "tags": [
+        "security",
+        "passwords",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "password-keyforge.title",
+          "label": "title",
+          "value": "Password · Keyforge"
+        },
+        {
+          "id": "password-keyforge.description",
+          "label": "description",
+          "value": "Fictional password vault for account credentials."
+        },
+        {
+          "id": "password-keyforge.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "password-keyforge.recovery_email",
+          "label": "recovery_email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "password-keyforge.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "password-keyforge.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "review",
+          "value": 1796083200000
+        }
+      ],
+      "createdAt": "2026-10-20T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "chat-orbit",
+      "mainInfoEntryId": "chat-orbit.title",
+      "tags": [
+        "service",
+        "messaging",
+        "social_media"
+      ],
+      "infoEntries": [
+        {
+          "id": "chat-orbit.title",
+          "label": "title",
+          "value": "Chat · Orbit Chat"
+        },
+        {
+          "id": "chat-orbit.description",
+          "label": "description",
+          "value": "Fictional messenger account used on two devices."
+        },
+        {
+          "id": "chat-orbit.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "chat-orbit.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "chat-orbit.handle",
+          "label": "handle",
+          "value": "mila-demo-0401"
+        },
+        {
+          "id": "chat-orbit.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-21T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "social-pinecone",
+      "mainInfoEntryId": "social-pinecone.title",
+      "tags": [
+        "service",
+        "social_media",
+        "archive"
+      ],
+      "infoEntries": [
+        {
+          "id": "social-pinecone.title",
+          "label": "title",
+          "value": "Social · Pinecone"
+        },
+        {
+          "id": "social-pinecone.description",
+          "label": "description",
+          "value": "Fictional social profile with a legacy phone."
+        },
+        {
+          "id": "social-pinecone.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "social-pinecone.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "social-pinecone.handle",
+          "label": "handle",
+          "value": "mila-demo-0402"
+        },
+        {
+          "id": "social-pinecone.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-22T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "market-north",
+      "mainInfoEntryId": "market-north.title",
+      "tags": [
+        "service",
+        "shopping",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "market-north.title",
+          "label": "title",
+          "value": "Marketplace · North Market"
+        },
+        {
+          "id": "market-north.description",
+          "label": "description",
+          "value": "Fictional marketplace profile for household orders."
+        },
+        {
+          "id": "market-north.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "market-north.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "market-north.customer",
+          "label": "customer",
+          "value": "NM-DEMO-0403"
+        },
+        {
+          "id": "market-north.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-23T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "delivery-parcel",
+      "mainInfoEntryId": "delivery-parcel.title",
+      "tags": [
+        "service",
+        "shopping",
+        "delivery"
+      ],
+      "infoEntries": [
+        {
+          "id": "delivery-parcel.title",
+          "label": "title",
+          "value": "Delivery · Parcel Pilot"
+        },
+        {
+          "id": "delivery-parcel.description",
+          "label": "description",
+          "value": "Fictional parcel account for order tracking."
+        },
+        {
+          "id": "delivery-parcel.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "delivery-parcel.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "delivery-parcel.customer",
+          "label": "customer",
+          "value": "PP-DEMO-0404"
+        },
+        {
+          "id": "delivery-parcel.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-24T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "ride-wayfarer",
+      "mainInfoEntryId": "ride-wayfarer.title",
+      "tags": [
+        "service",
+        "travel",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "ride-wayfarer.title",
+          "label": "title",
+          "value": "Ride · Wayfarer"
+        },
+        {
+          "id": "ride-wayfarer.description",
+          "label": "description",
+          "value": "Fictional ride service account."
+        },
+        {
+          "id": "ride-wayfarer.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "ride-wayfarer.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "ride-wayfarer.rider",
+          "label": "rider",
+          "value": "WF-DEMO-0405"
+        },
+        {
+          "id": "ride-wayfarer.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-25T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "travel-skytrail",
+      "mainInfoEntryId": "travel-skytrail.title",
+      "tags": [
+        "service",
+        "travel",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "travel-skytrail.title",
+          "label": "title",
+          "value": "Travel · Skytrail"
+        },
+        {
+          "id": "travel-skytrail.description",
+          "label": "description",
+          "value": "Fictional travel booking profile."
+        },
+        {
+          "id": "travel-skytrail.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "travel-skytrail.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "travel-skytrail.traveler",
+          "label": "traveler",
+          "value": "ST-DEMO-0406"
+        },
+        {
+          "id": "travel-skytrail.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1803081600000
+        }
+      ],
+      "createdAt": "2026-10-26T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "stream-lantern",
+      "mainInfoEntryId": "stream-lantern.title",
+      "tags": [
+        "service",
+        "subscription",
+        "entertainment"
+      ],
+      "infoEntries": [
+        {
+          "id": "stream-lantern.title",
+          "label": "title",
+          "value": "Streaming · Lantern+"
+        },
+        {
+          "id": "stream-lantern.description",
+          "label": "description",
+          "value": "Fictional video subscription billed monthly."
+        },
+        {
+          "id": "stream-lantern.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "stream-lantern.plan",
+          "label": "plan",
+          "value": "family"
+        },
+        {
+          "id": "stream-lantern.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1796688000000
+        }
+      ],
+      "createdAt": "2026-10-27T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "music-echo",
+      "mainInfoEntryId": "music-echo.title",
+      "tags": [
+        "service",
+        "subscription",
+        "entertainment"
+      ],
+      "infoEntries": [
+        {
+          "id": "music-echo.title",
+          "label": "title",
+          "value": "Music · Echo Harbor"
+        },
+        {
+          "id": "music-echo.description",
+          "label": "description",
+          "value": "Fictional music subscription."
+        },
+        {
+          "id": "music-echo.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "music-echo.plan",
+          "label": "plan",
+          "value": "individual"
+        },
+        {
+          "id": "music-echo.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1797638400000
+        }
+      ],
+      "createdAt": "2026-10-28T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "work-task",
+      "mainInfoEntryId": "work-task.title",
+      "tags": [
+        "service",
+        "work",
+        "productivity"
+      ],
+      "infoEntries": [
+        {
+          "id": "work-task.title",
+          "label": "title",
+          "value": "Work · Task Harbor"
+        },
+        {
+          "id": "work-task.description",
+          "label": "description",
+          "value": "Fictional work task workspace."
+        },
+        {
+          "id": "work-task.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "work-task.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "work-task.workspace",
+          "label": "workspace",
+          "value": "mila-work-demo"
+        },
+        {
+          "id": "work-task.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-01T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "code-forgebox",
+      "mainInfoEntryId": "code-forgebox.title",
+      "tags": [
+        "service",
+        "work",
+        "security"
+      ],
+      "infoEntries": [
+        {
+          "id": "code-forgebox.title",
+          "label": "title",
+          "value": "Code · Forgebox"
+        },
+        {
+          "id": "code-forgebox.description",
+          "label": "description",
+          "value": "Fictional code hosting account."
+        },
+        {
+          "id": "code-forgebox.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "code-forgebox.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "code-forgebox.handle",
+          "label": "handle",
+          "value": "mila-forge-demo"
+        },
+        {
+          "id": "code-forgebox.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-02T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "vpn-quiet",
+      "mainInfoEntryId": "vpn-quiet.title",
+      "tags": [
+        "service",
+        "security",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "vpn-quiet.title",
+          "label": "title",
+          "value": "VPN · Quiet Tunnel"
+        },
+        {
+          "id": "vpn-quiet.description",
+          "label": "description",
+          "value": "Fictional VPN account for remote work."
+        },
+        {
+          "id": "vpn-quiet.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "vpn-quiet.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "vpn-quiet.plan",
+          "label": "plan",
+          "value": "team"
+        },
+        {
+          "id": "vpn-quiet.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1798934400000
+        }
+      ],
+      "createdAt": "2026-10-03T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "home-nestory",
+      "mainInfoEntryId": "home-nestory.title",
+      "tags": [
+        "service",
+        "home",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "home-nestory.title",
+          "label": "title",
+          "value": "Smart Home · Nestory"
+        },
+        {
+          "id": "home-nestory.description",
+          "label": "description",
+          "value": "Fictional smart-home controller."
+        },
+        {
+          "id": "home-nestory.login_email",
+          "label": "login_email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "home-nestory.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "home-nestory.home",
+          "label": "home",
+          "value": "apt-demo-0407"
+        },
+        {
+          "id": "home-nestory.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-04T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "health-carepath",
+      "mainInfoEntryId": "health-carepath.title",
+      "tags": [
+        "service",
+        "health",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "health-carepath.title",
+          "label": "title",
+          "value": "Health · Carepath"
+        },
+        {
+          "id": "health-carepath.description",
+          "label": "description",
+          "value": "Fictional health portal account."
+        },
+        {
+          "id": "health-carepath.login_email",
+          "label": "login_email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "health-carepath.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "health-carepath.member",
+          "label": "member",
+          "value": "CP-DEMO-0408"
+        },
+        {
+          "id": "health-carepath.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-05T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "learn-atlas",
+      "mainInfoEntryId": "learn-atlas.title",
+      "tags": [
+        "service",
+        "learning",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "learn-atlas.title",
+          "label": "title",
+          "value": "Learning · Atlas Academy"
+        },
+        {
+          "id": "learn-atlas.description",
+          "label": "description",
+          "value": "Fictional course platform profile."
+        },
+        {
+          "id": "learn-atlas.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "learn-atlas.phone",
+          "label": "phone",
+          "value": "+1 202-555-0102"
+        },
+        {
+          "id": "learn-atlas.learner",
+          "label": "learner",
+          "value": "AA-DEMO-0409"
+        },
+        {
+          "id": "learn-atlas.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-06T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "news-beacon",
+      "mainInfoEntryId": "news-beacon.title",
+      "tags": [
+        "service",
+        "subscription",
+        "shopping"
+      ],
+      "infoEntries": [
+        {
+          "id": "news-beacon.title",
+          "label": "title",
+          "value": "News · Daily Beacon"
+        },
+        {
+          "id": "news-beacon.description",
+          "label": "description",
+          "value": "Fictional newsletter account."
+        },
+        {
+          "id": "news-beacon.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "news-beacon.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1799280000000
+        }
+      ],
+      "createdAt": "2026-10-07T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "domain-hollow",
+      "mainInfoEntryId": "domain-hollow.title",
+      "tags": [
+        "service",
+        "work",
+        "infrastructure"
+      ],
+      "infoEntries": [
+        {
+          "id": "domain-hollow.title",
+          "label": "title",
+          "value": "Domain · Hollow Registrar"
+        },
+        {
+          "id": "domain-hollow.description",
+          "label": "description",
+          "value": "Fictional registrar for the demo domain."
+        },
+        {
+          "id": "domain-hollow.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "domain-hollow.domain",
+          "label": "domain",
+          "value": "mila-demo.a22r.invalid"
+        },
+        {
+          "id": "domain-hollow.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1807660800000
+        }
+      ],
+      "createdAt": "2026-10-08T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "hosting-cedar",
+      "mainInfoEntryId": "hosting-cedar.title",
+      "tags": [
+        "service",
+        "work",
+        "infrastructure"
+      ],
+      "infoEntries": [
+        {
+          "id": "hosting-cedar.title",
+          "label": "title",
+          "value": "Hosting · Cedar Cloud"
+        },
+        {
+          "id": "hosting-cedar.description",
+          "label": "description",
+          "value": "Fictional hosting account for a demo site."
+        },
+        {
+          "id": "hosting-cedar.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "hosting-cedar.project",
+          "label": "project",
+          "value": "mila-demo-site"
+        },
+        {
+          "id": "hosting-cedar.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1807660800000
+        }
+      ],
+      "createdAt": "2026-10-09T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "support-a22r",
+      "mainInfoEntryId": "support-a22r.title",
+      "tags": [
+        "service",
+        "support",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "support-a22r.title",
+          "label": "title",
+          "value": "Support · A22R Helpdesk"
+        },
+        {
+          "id": "support-a22r.description",
+          "label": "description",
+          "value": "Fictional support portal for account recovery tests."
+        },
+        {
+          "id": "support-a22r.contact_email",
+          "label": "contact_email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "support-a22r.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "support-a22r.case",
+          "label": "case",
+          "value": "A22R-DEMO-0042"
+        },
+        {
+          "id": "support-a22r.status",
+          "label": "status",
+          "value": "open"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-10T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "utility-bluewater",
+      "mainInfoEntryId": "utility-bluewater.title",
+      "tags": [
+        "utilities",
+        "finance",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "utility-bluewater.title",
+          "label": "title",
+          "value": "Utility · Bluewater Power"
+        },
+        {
+          "id": "utility-bluewater.description",
+          "label": "description",
+          "value": "Fictional electricity account with autopay."
+        },
+        {
+          "id": "utility-bluewater.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "utility-bluewater.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "utility-bluewater.customer",
+          "label": "customer",
+          "value": "BWP-DEMO-0410"
+        },
+        {
+          "id": "utility-bluewater.status",
+          "label": "status",
+          "value": "autopay"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "due",
+          "value": 1796428800000
+        }
+      ],
+      "createdAt": "2026-10-11T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "utility-gridline",
+      "mainInfoEntryId": "utility-gridline.title",
+      "tags": [
+        "utilities",
+        "finance",
+        "phone"
+      ],
+      "infoEntries": [
+        {
+          "id": "utility-gridline.title",
+          "label": "title",
+          "value": "Utility · Gridline Mobile"
+        },
+        {
+          "id": "utility-gridline.description",
+          "label": "description",
+          "value": "Fictional mobile plan account."
+        },
+        {
+          "id": "utility-gridline.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "utility-gridline.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "utility-gridline.customer",
+          "label": "customer",
+          "value": "GML-DEMO-0411"
+        },
+        {
+          "id": "utility-gridline.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "due",
+          "value": 1796947200000
+        }
+      ],
+      "createdAt": "2026-10-12T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "insurance-hearth",
+      "mainInfoEntryId": "insurance-hearth.title",
+      "tags": [
+        "finance",
+        "insurance",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "insurance-hearth.title",
+          "label": "title",
+          "value": "Insurance · Hearth Shield"
+        },
+        {
+          "id": "insurance-hearth.description",
+          "label": "description",
+          "value": "Fictional home insurance policy."
+        },
+        {
+          "id": "insurance-hearth.email",
+          "label": "email",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "insurance-hearth.phone",
+          "label": "phone",
+          "value": "+1 202-555-0103"
+        },
+        {
+          "id": "insurance-hearth.policy",
+          "label": "policy",
+          "value": "HS-DEMO-0412"
+        },
+        {
+          "id": "insurance-hearth.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1809129600000
+        }
+      ],
+      "createdAt": "2026-10-13T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "tax-ledgerdesk",
+      "mainInfoEntryId": "tax-ledgerdesk.title",
+      "tags": [
+        "finance",
+        "work",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "tax-ledgerdesk.title",
+          "label": "title",
+          "value": "Tax · Ledger Desk"
+        },
+        {
+          "id": "tax-ledgerdesk.description",
+          "label": "description",
+          "value": "Fictional tax filing profile."
+        },
+        {
+          "id": "tax-ledgerdesk.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "tax-ledgerdesk.profile",
+          "label": "profile",
+          "value": "LD-DEMO-0413"
+        },
+        {
+          "id": "tax-ledgerdesk.status",
+          "label": "status",
+          "value": "seasonal"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "review",
+          "value": 1801440000000
+        }
+      ],
+      "createdAt": "2026-10-14T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "subscription-brightbox",
+      "mainInfoEntryId": "subscription-brightbox.title",
+      "tags": [
+        "subscription",
+        "shopping",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "subscription-brightbox.title",
+          "label": "title",
+          "value": "Subscription · Brightbox"
+        },
+        {
+          "id": "subscription-brightbox.description",
+          "label": "description",
+          "value": "Fictional household goods subscription."
+        },
+        {
+          "id": "subscription-brightbox.login_email",
+          "label": "login_email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "subscription-brightbox.customer",
+          "label": "customer",
+          "value": "BB-DEMO-0414"
+        },
+        {
+          "id": "subscription-brightbox.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1797897600000
+        }
+      ],
+      "createdAt": "2026-10-15T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "merchant-coffeeloop",
+      "mainInfoEntryId": "merchant-coffeeloop.title",
+      "tags": [
+        "merchant",
+        "shopping",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "merchant-coffeeloop.title",
+          "label": "title",
+          "value": "Merchant · Coffee Loop"
+        },
+        {
+          "id": "merchant-coffeeloop.description",
+          "label": "description",
+          "value": "Fictional recurring coffee merchant."
+        },
+        {
+          "id": "merchant-coffeeloop.customer",
+          "label": "customer",
+          "value": "CL-DEMO-0415"
+        },
+        {
+          "id": "merchant-coffeeloop.status",
+          "label": "status",
+          "value": "occasional"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-16T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "merchant-homesupply",
+      "mainInfoEntryId": "merchant-homesupply.title",
+      "tags": [
+        "merchant",
+        "shopping",
+        "delivery"
+      ],
+      "infoEntries": [
+        {
+          "id": "merchant-homesupply.title",
+          "label": "title",
+          "value": "Merchant · Home Supply"
+        },
+        {
+          "id": "merchant-homesupply.description",
+          "label": "description",
+          "value": "Fictional home supply order history."
+        },
+        {
+          "id": "merchant-homesupply.order",
+          "label": "order",
+          "value": "HS-DEMO-0416"
+        },
+        {
+          "id": "merchant-homesupply.status",
+          "label": "status",
+          "value": "complete"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-17T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "merchant-railair",
+      "mainInfoEntryId": "merchant-railair.title",
+      "tags": [
+        "merchant",
+        "travel",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "merchant-railair.title",
+          "label": "title",
+          "value": "Merchant · Rail & Air"
+        },
+        {
+          "id": "merchant-railair.description",
+          "label": "description",
+          "value": "Fictional transport booking merchant."
+        },
+        {
+          "id": "merchant-railair.booking",
+          "label": "booking",
+          "value": "RA-DEMO-0417"
+        },
+        {
+          "id": "merchant-railair.status",
+          "label": "status",
+          "value": "complete"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-18T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "donation-goodseed",
+      "mainInfoEntryId": "donation-goodseed.title",
+      "tags": [
+        "finance",
+        "donation",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "donation-goodseed.title",
+          "label": "title",
+          "value": "Donation · Goodseed"
+        },
+        {
+          "id": "donation-goodseed.description",
+          "label": "description",
+          "value": "Fictional recurring donation recipient."
+        },
+        {
+          "id": "donation-goodseed.donor",
+          "label": "donor",
+          "value": "GS-DEMO-0418"
+        },
+        {
+          "id": "donation-goodseed.status",
+          "label": "status",
+          "value": "monthly"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "renewal",
+          "value": 1798416000000
+        }
+      ],
+      "createdAt": "2026-10-19T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "salary-portal",
+      "mainInfoEntryId": "salary-portal.title",
+      "tags": [
+        "finance",
+        "bank",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "salary-portal.title",
+          "label": "title",
+          "value": "Banking · Salary Portal"
+        },
+        {
+          "id": "salary-portal.description",
+          "label": "description",
+          "value": "Fictional payroll access profile."
+        },
+        {
+          "id": "salary-portal.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "salary-portal.profile",
+          "label": "profile",
+          "value": "SP-DEMO-0419"
+        },
+        {
+          "id": "salary-portal.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-20T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "accounting-ledgerly",
+      "mainInfoEntryId": "accounting-ledgerly.title",
+      "tags": [
+        "finance",
+        "work",
+        "payment"
+      ],
+      "infoEntries": [
+        {
+          "id": "accounting-ledgerly.title",
+          "label": "title",
+          "value": "Accounting · Ledgerly"
+        },
+        {
+          "id": "accounting-ledgerly.description",
+          "label": "description",
+          "value": "Fictional accountant workspace."
+        },
+        {
+          "id": "accounting-ledgerly.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "accounting-ledgerly.company",
+          "label": "company",
+          "value": "LE-DEMO-0420"
+        },
+        {
+          "id": "accounting-ledgerly.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-21T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "payment-invoice",
+      "mainInfoEntryId": "payment-invoice.title",
+      "tags": [
+        "finance",
+        "payment",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "payment-invoice.title",
+          "label": "title",
+          "value": "Payment · Invoice Hub"
+        },
+        {
+          "id": "payment-invoice.description",
+          "label": "description",
+          "value": "Fictional invoice collection portal."
+        },
+        {
+          "id": "payment-invoice.login_email",
+          "label": "login_email",
+          "value": "mila.work02@relay.a22r.invalid"
+        },
+        {
+          "id": "payment-invoice.merchant",
+          "label": "merchant",
+          "value": "IH-DEMO-0421"
+        },
+        {
+          "id": "payment-invoice.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-22T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "recovery-mailbox",
+      "mainInfoEntryId": "recovery-mailbox.title",
+      "tags": [
+        "security",
+        "recovery",
+        "email"
+      ],
+      "infoEntries": [
+        {
+          "id": "recovery-mailbox.title",
+          "label": "title",
+          "value": "Recovery · Mailbox"
+        },
+        {
+          "id": "recovery-mailbox.description",
+          "label": "description",
+          "value": "Synthetic forwarding mailbox for account recovery."
+        },
+        {
+          "id": "recovery-mailbox.mailbox",
+          "label": "mailbox",
+          "value": "mila.recovery03@vault.a22r.invalid"
+        },
+        {
+          "id": "recovery-mailbox.forwards_to",
+          "label": "forwards_to",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "recovery-mailbox.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-23T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "recovery-codes",
+      "mainInfoEntryId": "recovery-codes.title",
+      "tags": [
+        "security",
+        "recovery",
+        "2fa"
+      ],
+      "infoEntries": [
+        {
+          "id": "recovery-codes.title",
+          "label": "title",
+          "value": "Recovery · Backup Codes"
+        },
+        {
+          "id": "recovery-codes.description",
+          "label": "description",
+          "value": "Synthetic offline code set; never a real credential."
+        },
+        {
+          "id": "recovery-codes.code_set",
+          "label": "code_set",
+          "value": "RC-DEMO-0422"
+        },
+        {
+          "id": "recovery-codes.stored",
+          "label": "stored",
+          "value": "offline envelope"
+        },
+        {
+          "id": "recovery-codes.status",
+          "label": "status",
+          "value": "current"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "review",
+          "value": 1803859200000
+        }
+      ],
+      "createdAt": "2026-10-24T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "device-macbook",
+      "mainInfoEntryId": "device-macbook.title",
+      "tags": [
+        "device",
+        "security",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "device-macbook.title",
+          "label": "title",
+          "value": "Device · MacBook Air"
+        },
+        {
+          "id": "device-macbook.description",
+          "label": "description",
+          "value": "Synthetic trusted desktop device."
+        },
+        {
+          "id": "device-macbook.asset",
+          "label": "asset",
+          "value": "MAC-DEMO-0423"
+        },
+        {
+          "id": "device-macbook.user",
+          "label": "user",
+          "value": "Mila (demo)"
+        },
+        {
+          "id": "device-macbook.status",
+          "label": "status",
+          "value": "trusted"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-25T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "device-iphone",
+      "mainInfoEntryId": "device-iphone.title",
+      "tags": [
+        "device",
+        "security",
+        "2fa"
+      ],
+      "infoEntries": [
+        {
+          "id": "device-iphone.title",
+          "label": "title",
+          "value": "Device · iPhone SE"
+        },
+        {
+          "id": "device-iphone.description",
+          "label": "description",
+          "value": "Synthetic trusted mobile device."
+        },
+        {
+          "id": "device-iphone.asset",
+          "label": "asset",
+          "value": "IPH-DEMO-0424"
+        },
+        {
+          "id": "device-iphone.user",
+          "label": "user",
+          "value": "Mila (demo)"
+        },
+        {
+          "id": "device-iphone.status",
+          "label": "status",
+          "value": "trusted"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-26T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "vault-documents",
+      "mainInfoEntryId": "vault-documents.title",
+      "tags": [
+        "security",
+        "identity",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "vault-documents.title",
+          "label": "title",
+          "value": "Document · ID Vault"
+        },
+        {
+          "id": "vault-documents.description",
+          "label": "description",
+          "value": "Synthetic encrypted identity-document record."
+        },
+        {
+          "id": "vault-documents.record",
+          "label": "record",
+          "value": "IDV-DEMO-0425"
+        },
+        {
+          "id": "vault-documents.status",
+          "label": "status",
+          "value": "encrypted"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "review",
+          "value": 1811808000000
+        }
+      ],
+      "createdAt": "2026-10-27T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "note-inventory",
+      "mainInfoEntryId": "note-inventory.title",
+      "tags": [
+        "note",
+        "identity",
+        "security"
+      ],
+      "infoEntries": [
+        {
+          "id": "note-inventory.title",
+          "label": "title",
+          "value": "Note · Account Inventory"
+        },
+        {
+          "id": "note-inventory.description",
+          "label": "description",
+          "value": "Index of synthetic accounts and access routes."
+        },
+        {
+          "id": "note-inventory.version",
+          "label": "version",
+          "value": "2026.11"
+        },
+        {
+          "id": "note-inventory.scope",
+          "label": "scope",
+          "value": "emails, phones, finance, services"
+        }
+      ],
+      "dateTimeEntries": [
+        {
+          "label": "review",
+          "value": 1796083200000
+        }
+      ],
+      "createdAt": "2026-10-28T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "contact-partner",
+      "mainInfoEntryId": "contact-partner.title",
+      "tags": [
+        "contact",
+        "identity",
+        "recovery"
+      ],
+      "infoEntries": [
+        {
+          "id": "contact-partner.title",
+          "label": "title",
+          "value": "Contact · Alex"
+        },
+        {
+          "id": "contact-partner.description",
+          "label": "description",
+          "value": "Synthetic trusted contact for recovery escalation."
+        },
+        {
+          "id": "contact-partner.phone",
+          "label": "phone",
+          "value": "+1 202-555-0105"
+        },
+        {
+          "id": "contact-partner.relationship",
+          "label": "relationship",
+          "value": "partner"
+        },
+        {
+          "id": "contact-partner.status",
+          "label": "status",
+          "value": "trusted"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-01T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "contact-accountant",
+      "mainInfoEntryId": "contact-accountant.title",
+      "tags": [
+        "contact",
+        "finance",
+        "work"
+      ],
+      "infoEntries": [
+        {
+          "id": "contact-accountant.title",
+          "label": "title",
+          "value": "Contact · Dana"
+        },
+        {
+          "id": "contact-accountant.description",
+          "label": "description",
+          "value": "Synthetic accountant contact for tax and books."
+        },
+        {
+          "id": "contact-accountant.email",
+          "label": "email",
+          "value": "dana.demo01@ledger.a22r.invalid"
+        },
+        {
+          "id": "contact-accountant.phone",
+          "label": "phone",
+          "value": "+1 202-555-0106"
+        },
+        {
+          "id": "contact-accountant.status",
+          "label": "status",
+          "value": "trusted"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-02T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "profile-shopping",
+      "mainInfoEntryId": "profile-shopping.title",
+      "tags": [
+        "profile",
+        "shopping",
+        "email"
+      ],
+      "infoEntries": [
+        {
+          "id": "profile-shopping.title",
+          "label": "title",
+          "value": "Profile · Shopping"
+        },
+        {
+          "id": "profile-shopping.description",
+          "label": "description",
+          "value": "Synthetic shopping identity using the alias mailbox."
+        },
+        {
+          "id": "profile-shopping.email",
+          "label": "email",
+          "value": "mila.alias04@inbox.a22r.invalid"
+        },
+        {
+          "id": "profile-shopping.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "profile-shopping.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-03T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "profile-travel",
+      "mainInfoEntryId": "profile-travel.title",
+      "tags": [
+        "profile",
+        "travel",
+        "email"
+      ],
+      "infoEntries": [
+        {
+          "id": "profile-travel.title",
+          "label": "title",
+          "value": "Profile · Travel"
+        },
+        {
+          "id": "profile-travel.description",
+          "label": "description",
+          "value": "Synthetic travel identity using the main mailbox."
+        },
+        {
+          "id": "profile-travel.email",
+          "label": "email",
+          "value": "mila.main01@inbox.a22r.invalid"
+        },
+        {
+          "id": "profile-travel.phone",
+          "label": "phone",
+          "value": "+1 202-555-0101"
+        },
+        {
+          "id": "profile-travel.status",
+          "label": "status",
+          "value": "active"
+        }
+      ],
+      "dateTimeEntries": [],
+      "createdAt": "2026-10-04T09:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    }
+  ],
+  "timers": [
+    {
+      "id": "timer-bills",
+      "name": "Review recurring bills",
+      "baseAt": "2026-12-01T09:00:00.000Z",
+      "description": "Review utilities and subscriptions.",
+      "isActive": true,
+      "schedule": {
+        "every": 1,
+        "unit": "months"
+      },
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-banks",
+      "name": "Review bank aliases",
+      "baseAt": "2026-12-15T09:00:00.000Z",
+      "description": "Confirm account and card links.",
+      "isActive": true,
+      "schedule": {
+        "every": 3,
+        "unit": "months"
+      },
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-security",
+      "name": "Check recovery routes",
+      "baseAt": "2026-12-05T09:00:00.000Z",
+      "description": "Check recovery mailbox, phone, and devices.",
+      "isActive": true,
+      "schedule": {
+        "every": 3,
+        "unit": "months"
+      },
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-codes",
+      "name": "Rotate backup codes",
+      "baseAt": "2027-03-01T09:00:00.000Z",
+      "description": "Refresh the synthetic backup-code record.",
+      "isActive": false,
+      "schedule": {
+        "every": 6,
+        "unit": "months"
+      },
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    }
+  ],
+  "itemTimerLinks": [
+    {
+      "id": "timer-link-001",
+      "itemId": "note-inventory",
+      "timerId": "timer-bills",
+      "lastCheckedAt": "2026-11-24T18:00:00.000Z",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-link-002",
+      "itemId": "bank-northstar",
+      "timerId": "timer-banks",
+      "lastCheckedAt": "2026-11-20T18:00:00.000Z",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-link-003",
+      "itemId": "recovery-mailbox",
+      "timerId": "timer-security",
+      "lastCheckedAt": "2026-11-18T18:00:00.000Z",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "timer-link-004",
+      "itemId": "recovery-codes",
+      "timerId": "timer-codes",
+      "lastCheckedAt": "2026-09-01T18:00:00.000Z",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    }
+  ],
+  "itemLinks": [
+    {
+      "id": "rel-001",
+      "itemId": "identity-profile",
+      "targetId": "phone-primary",
+      "type": "owns",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-002",
+      "itemId": "identity-profile",
+      "targetId": "phone-backup",
+      "type": "owns",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-003",
+      "itemId": "identity-profile",
+      "targetId": "email-main",
+      "type": "owns",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-004",
+      "itemId": "identity-profile",
+      "targetId": "email-work",
+      "type": "owns",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-005",
+      "itemId": "identity-profile",
+      "targetId": "email-recovery",
+      "type": "owns",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-006",
+      "itemId": "profile-shopping",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-007",
+      "itemId": "profile-shopping",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-008",
+      "itemId": "profile-travel",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-009",
+      "itemId": "profile-travel",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-010",
+      "itemId": "bank-northstar",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-011",
+      "itemId": "bank-northstar",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-012",
+      "itemId": "bank-northstar",
+      "targetId": "identity-profile",
+      "type": "owned_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-013",
+      "itemId": "bank-lumen",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-014",
+      "itemId": "bank-lumen",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-015",
+      "itemId": "bank-lumen",
+      "targetId": "identity-profile",
+      "type": "owned_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-016",
+      "itemId": "bank-cedar",
+      "targetId": "email-recovery",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-017",
+      "itemId": "bank-cedar",
+      "targetId": "phone-backup",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-018",
+      "itemId": "bank-cedar",
+      "targetId": "identity-profile",
+      "type": "owned_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-019",
+      "itemId": "card-northstar",
+      "targetId": "bank-northstar",
+      "type": "issued_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-020",
+      "itemId": "card-northstar",
+      "targetId": "email-main",
+      "type": "alerts_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-021",
+      "itemId": "card-lumen",
+      "targetId": "bank-lumen",
+      "type": "issued_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-022",
+      "itemId": "card-lumen",
+      "targetId": "email-main",
+      "type": "alerts_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-023",
+      "itemId": "card-cedar",
+      "targetId": "bank-cedar",
+      "type": "issued_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-024",
+      "itemId": "card-cedar",
+      "targetId": "email-recovery",
+      "type": "alerts_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-025",
+      "itemId": "wallet-aurora",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-026",
+      "itemId": "wallet-aurora",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-027",
+      "itemId": "wallet-aurora",
+      "targetId": "card-northstar",
+      "type": "funded_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-028",
+      "itemId": "wallet-orbit",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-029",
+      "itemId": "wallet-orbit",
+      "targetId": "phone-backup",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-030",
+      "itemId": "wallet-orbit",
+      "targetId": "card-lumen",
+      "type": "funded_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-031",
+      "itemId": "payment-quick",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-032",
+      "itemId": "payment-quick",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-033",
+      "itemId": "payment-quick",
+      "targetId": "bank-northstar",
+      "type": "settled_to",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-034",
+      "itemId": "cloud-nimbus",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-035",
+      "itemId": "cloud-nimbus",
+      "targetId": "phone-work",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-036",
+      "itemId": "password-keyforge",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-037",
+      "itemId": "password-keyforge",
+      "targetId": "email-recovery",
+      "type": "recovery_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-038",
+      "itemId": "password-keyforge",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-039",
+      "itemId": "password-keyforge",
+      "targetId": "device-macbook",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-040",
+      "itemId": "chat-orbit",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-041",
+      "itemId": "chat-orbit",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-042",
+      "itemId": "chat-orbit",
+      "targetId": "device-iphone",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-043",
+      "itemId": "social-pinecone",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-044",
+      "itemId": "social-pinecone",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-045",
+      "itemId": "social-pinecone",
+      "targetId": "phone-retired",
+      "type": "legacy_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-046",
+      "itemId": "market-north",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-047",
+      "itemId": "market-north",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-048",
+      "itemId": "market-north",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-049",
+      "itemId": "delivery-parcel",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-050",
+      "itemId": "delivery-parcel",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-051",
+      "itemId": "delivery-parcel",
+      "targetId": "wallet-aurora",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-052",
+      "itemId": "ride-wayfarer",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-053",
+      "itemId": "ride-wayfarer",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-054",
+      "itemId": "ride-wayfarer",
+      "targetId": "wallet-aurora",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-055",
+      "itemId": "travel-skytrail",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-056",
+      "itemId": "travel-skytrail",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-057",
+      "itemId": "travel-skytrail",
+      "targetId": "card-lumen",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-058",
+      "itemId": "stream-lantern",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-059",
+      "itemId": "stream-lantern",
+      "targetId": "card-lumen",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-060",
+      "itemId": "music-echo",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-061",
+      "itemId": "music-echo",
+      "targetId": "card-lumen",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-062",
+      "itemId": "work-task",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-063",
+      "itemId": "work-task",
+      "targetId": "phone-work",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-064",
+      "itemId": "code-forgebox",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-065",
+      "itemId": "code-forgebox",
+      "targetId": "phone-work",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-066",
+      "itemId": "code-forgebox",
+      "targetId": "password-keyforge",
+      "type": "protected_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-067",
+      "itemId": "vpn-quiet",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-068",
+      "itemId": "vpn-quiet",
+      "targetId": "phone-work",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-069",
+      "itemId": "vpn-quiet",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-070",
+      "itemId": "home-nestory",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-071",
+      "itemId": "home-nestory",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-072",
+      "itemId": "home-nestory",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-073",
+      "itemId": "health-carepath",
+      "targetId": "email-recovery",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-074",
+      "itemId": "health-carepath",
+      "targetId": "phone-backup",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-075",
+      "itemId": "learn-atlas",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-076",
+      "itemId": "learn-atlas",
+      "targetId": "phone-work",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-077",
+      "itemId": "news-beacon",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-078",
+      "itemId": "domain-hollow",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-079",
+      "itemId": "domain-hollow",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-080",
+      "itemId": "hosting-cedar",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-081",
+      "itemId": "hosting-cedar",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-082",
+      "itemId": "hosting-cedar",
+      "targetId": "domain-hollow",
+      "type": "hosts",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-083",
+      "itemId": "support-a22r",
+      "targetId": "email-recovery",
+      "type": "contact_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-084",
+      "itemId": "support-a22r",
+      "targetId": "phone-backup",
+      "type": "contact_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-085",
+      "itemId": "support-a22r",
+      "targetId": "note-inventory",
+      "type": "references",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-086",
+      "itemId": "utility-bluewater",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-087",
+      "itemId": "utility-bluewater",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-088",
+      "itemId": "utility-bluewater",
+      "targetId": "bank-lumen",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-089",
+      "itemId": "utility-bluewater",
+      "targetId": "card-lumen",
+      "type": "autopay_card",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-090",
+      "itemId": "utility-gridline",
+      "targetId": "email-main",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-091",
+      "itemId": "utility-gridline",
+      "targetId": "phone-primary",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-092",
+      "itemId": "utility-gridline",
+      "targetId": "bank-lumen",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-093",
+      "itemId": "insurance-hearth",
+      "targetId": "email-recovery",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-094",
+      "itemId": "insurance-hearth",
+      "targetId": "phone-backup",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-095",
+      "itemId": "insurance-hearth",
+      "targetId": "card-northstar",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-096",
+      "itemId": "tax-ledgerdesk",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-097",
+      "itemId": "tax-ledgerdesk",
+      "targetId": "bank-northstar",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-098",
+      "itemId": "subscription-brightbox",
+      "targetId": "email-alias",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-099",
+      "itemId": "subscription-brightbox",
+      "targetId": "card-lumen",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-100",
+      "itemId": "merchant-coffeeloop",
+      "targetId": "wallet-aurora",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-101",
+      "itemId": "merchant-homesupply",
+      "targetId": "card-northstar",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-102",
+      "itemId": "merchant-homesupply",
+      "targetId": "delivery-parcel",
+      "type": "delivery_account",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-103",
+      "itemId": "merchant-railair",
+      "targetId": "card-lumen",
+      "type": "paid_with",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-104",
+      "itemId": "merchant-railair",
+      "targetId": "travel-skytrail",
+      "type": "traveler_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-105",
+      "itemId": "donation-goodseed",
+      "targetId": "wallet-orbit",
+      "type": "donated_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-106",
+      "itemId": "donation-goodseed",
+      "targetId": "email-main",
+      "type": "receipt_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-107",
+      "itemId": "salary-portal",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-108",
+      "itemId": "salary-portal",
+      "targetId": "bank-northstar",
+      "type": "deposits_to",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-109",
+      "itemId": "accounting-ledgerly",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-110",
+      "itemId": "accounting-ledgerly",
+      "targetId": "bank-cedar",
+      "type": "paid_from",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-111",
+      "itemId": "payment-invoice",
+      "targetId": "email-work",
+      "type": "login_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-112",
+      "itemId": "payment-invoice",
+      "targetId": "bank-northstar",
+      "type": "settled_to",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-113",
+      "itemId": "recovery-mailbox",
+      "targetId": "email-recovery",
+      "type": "mailbox",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-114",
+      "itemId": "recovery-mailbox",
+      "targetId": "email-main",
+      "type": "forwards_to",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-115",
+      "itemId": "recovery-mailbox",
+      "targetId": "phone-backup",
+      "type": "sms_phone",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-116",
+      "itemId": "recovery-codes",
+      "targetId": "password-keyforge",
+      "type": "protects",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-117",
+      "itemId": "recovery-codes",
+      "targetId": "phone-backup",
+      "type": "verified_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-118",
+      "itemId": "recovery-codes",
+      "targetId": "device-iphone",
+      "type": "stored_on",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-119",
+      "itemId": "device-macbook",
+      "targetId": "cloud-nimbus",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-120",
+      "itemId": "device-macbook",
+      "targetId": "code-forgebox",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-121",
+      "itemId": "device-macbook",
+      "targetId": "vpn-quiet",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-122",
+      "itemId": "device-iphone",
+      "targetId": "phone-primary",
+      "type": "uses_number",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-123",
+      "itemId": "device-iphone",
+      "targetId": "wallet-aurora",
+      "type": "trusted_device",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-124",
+      "itemId": "vault-documents",
+      "targetId": "email-recovery",
+      "type": "vault_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-125",
+      "itemId": "vault-documents",
+      "targetId": "password-keyforge",
+      "type": "encrypted_by",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-126",
+      "itemId": "note-inventory",
+      "targetId": "email-main",
+      "type": "indexes",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-127",
+      "itemId": "note-inventory",
+      "targetId": "phone-primary",
+      "type": "indexes",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-128",
+      "itemId": "note-inventory",
+      "targetId": "bank-northstar",
+      "type": "indexes",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-129",
+      "itemId": "note-inventory",
+      "targetId": "wallet-aurora",
+      "type": "indexes",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-130",
+      "itemId": "note-inventory",
+      "targetId": "password-keyforge",
+      "type": "indexes",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-131",
+      "itemId": "contact-partner",
+      "targetId": "phone-backup",
+      "type": "trusted_contact",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-132",
+      "itemId": "contact-partner",
+      "targetId": "email-main",
+      "type": "trusted_contact",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-133",
+      "itemId": "contact-accountant",
+      "targetId": "email-work",
+      "type": "contact_email",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-134",
+      "itemId": "contact-accountant",
+      "targetId": "tax-ledgerdesk",
+      "type": "supports",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-135",
+      "itemId": "contact-accountant",
+      "targetId": "accounting-ledgerly",
+      "type": "manages",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-136",
+      "itemId": "profile-shopping",
+      "targetId": "market-north",
+      "type": "uses_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-137",
+      "itemId": "profile-shopping",
+      "targetId": "subscription-brightbox",
+      "type": "uses_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-138",
+      "itemId": "profile-shopping",
+      "targetId": "merchant-coffeeloop",
+      "type": "uses_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-139",
+      "itemId": "profile-travel",
+      "targetId": "travel-skytrail",
+      "type": "uses_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-140",
+      "itemId": "profile-travel",
+      "targetId": "merchant-railair",
+      "type": "uses_profile",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    },
+    {
+      "id": "rel-141",
+      "itemId": "profile-travel",
+      "targetId": "wallet-orbit",
+      "type": "uses_wallet",
+      "createdAt": "2026-11-24T18:00:00.000Z",
+      "updatedAt": "2026-11-24T20:00:00.000Z"
+    }
+  ]
+}
