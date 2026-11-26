@@ -12,7 +12,13 @@ These instructions apply to the whole repository.
 
 - Git is read-only for the LLM. Do not run commands that alter repository state, including `git commit`, `git push`, `git checkout`, `git reset`, or `git stash`. Version-control operations are reserved for the human developer.
 - After every implemented plan step, immediately update the relevant plan with the current status, observed result, verification performed, and any blocker. Do not postpone progress recording until the phase is complete.
-- Keep concise feature-focused change summaries in `docs/changes.md`, newest first. Include technical details only when crucial, omit minor changes, and mention mock-service updates only in general terms. Do not include code snippets.
+- Keep `docs/changes.md` newest first and use this format for every entry:
+  `## <short title> - YYYY-MM-DD`, followed by concise bullet points covering
+  the relevant features, fixes, and other notable changes. Include technical
+  details only when needed to explain behavior, compatibility, migration, or
+  verification. Keep each entry brief but complete and understandable, omit
+  minor implementation details, do not include code snippets, and mention
+  mock-service updates only in general terms.
 - Record every recurring LLM-pattern bug or repeated implementation failure in `docs/issues/`.
 - Record deferred cleanup and known technical debt in `docs/tech-debt.md`.
 
